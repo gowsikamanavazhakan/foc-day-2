@@ -1,0 +1,23 @@
+#include <stdio.h>
+int convert(int octal)
+{
+    int decimal = 0, i = 0;
+    while (octal != 0)
+    {
+        int rem = octal % 10;
+        octal /= 10;
+        int res=rem*pow(8,i);
+        decimal += res;
+        i++;
+    }
+    return decimal;
+}
+int main()
+{
+    int octal;
+    printf("Enter an octal number: ");
+    scanf("%d", &octal);
+    int decimal=convert(octal);
+    printf( " %d in octal = %d in decimal", octal, decimal);    
+    return 0;
+}
